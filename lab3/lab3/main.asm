@@ -18,17 +18,27 @@
 .def COUNTER = R19
 .def MODE = R21
 .def BAD_COUNTER = R22
+.def NUM_OF_PRINT = R29
+
+.def T1 = R0
+.def T2 = R1
+.def T3 = R2
+.def T4 = R3
 
 ; определение чисел для вывода на индикаторы
-.equ zero = 0b00000000
-.equ one = 0b00000001
-.equ two = 0b00000011
-.equ three = 0b00000111
-.equ four = 0b00001111
-.equ five = 0b00011111
-.equ six = 0b00111111
-.equ seven = 0b01111111
-.equ eight = 0b11111111
+.equ null = 0b00000000 
+.equ zero = 0b00111111
+.equ one = 0b00000110
+.equ two = 0b01011011
+.equ three = 0b01001111
+.equ four = 0b01100110
+.equ five = 0b01101101
+.equ six = 0b01111101
+.equ seven = 0b00000111
+.equ eight = 0b01111111
+.equ nine = 0b01101111
+
+
 
 
 /* Регистры для данной работы
@@ -107,8 +117,8 @@ DDR - настройка (ввод/вывод)
 RESET:
 	; настройка семисегментных индикаторов
 	SER TMP
-	OUT DDRA, TMP
-	OUT DDRB, TMP
+	OUT DDRA, TMP   ; (на каком индикаторе будет выводиться)
+	OUT DDRB, TMP   ; замена ddrc (отвечает за число)
 
 	; настройка порта Д на ввод (PD0 - PD3)
 	CLR TMP
@@ -131,27 +141,40 @@ RESET:
 	OUT SFIOR, TMP		   ; сбрасываем регистры PSR2 (для Т/C 2), PSR10 (для Т/C 0, 1) и 
 	
 	; обнуляем счетчик
-	CLR TMP
-	MOV COUNTER, TMP
+	LDI COUNTER, 0
+
+	
+
+	LDI TMP, 0
+	MOV T1, TMP
+	LDI TMP, 0
+	MOV T2, TMP
+	LDI TMP, 0
+	MOV T3, TMP
+	LDI TMP, 0
+	MOV T4, TMP
+
+	LDI TMP, 0b00001111
+	MOV R7, TMP
 
 	; настройка таймера
 	LDI TMP, 0b00001101
 	OUT TCCR0, TMP
+	LDI TMP, 0b00001101
+	OUT TCCR1B, TMP      ;  01 - стс    101 Тактовая частота МК/1024   
 
-	; LDI TMP, 0b00001101
-	; OUT TCCR1B, TMP      ;  01 - стс  101 Тактовая частота МК/1024   
 ; загрузка значения для сравнения 
 	LDI TMP, 0xFF
 	OUT OCR0, TMP
 
-	; LDI TMP, 0x3D
-	; OUT OCR1AH, TMP
-	; LDI TMP, 0x08
-	; OUT OCR1AL, TMP
+	LDI TMP, 0x3D
+	OUT OCR1AH, TMP
+	LDI TMP, 0x08
+	OUT OCR1AL, TMP
 
 	
 ; разрешаем прерывания таймера для сравнения
-	LDI TMP, 0b00000011
+	LDI TMP, 0b00010001  ; (для TС0 (по overflow) и для ТС1 (по совпадению))
 	OUT TIMSK, TMP
 
 ; настройка прерываний при нажатии кнопок PD2 & PD3
@@ -165,108 +188,179 @@ RESET:
 
 
 main:
-	CP MODE, COUNTER
-	BREQ main
-	MOV MODE, COUNTER
+	MOV T1, COUNTER 
+	RJMP TR_T2
 	
-	MOV TMP, MODE
-	CPI TMP, 125
-	BRLO display_num
-	CLR COUNTER
-	CLR MODE
-	CLR TMP
+	
 
-display_num:
+
+TR_T2:
+	MOV TMP, T1
+	CLC
+	CPI TMP, 10
+	BRLO printNUM
+	INC T2
+	SUBI TMP, 10
+	MOV T1, TMP
+
+TR_T3:
+	MOV TMP, T2
+	CLC
+	CPI TMP, 6
+	BRLO printNUM
+	INC T3
+	SUBI TMP, 6
+	MOV T2, TMP
+
+TR_T4:
+	MOV TMP, T3
+	CLC
+	CPI TMP, 10
+	BRLO printNUM
+	INC T4
+	SUBI TMP, 10
+	MOV T3, TMP
+
+
+printNUM:
+	CPI NUM_OF_PRINT, 1
+	BREQ oneP
+	CPI NUM_OF_PRINT, 2
+	BREQ twoP
+	CPI NUM_OF_PRINT, 3
+	BREQ threeP
+	CPI NUM_OF_PRINT, 4
+	BREQ fourP
+	JMP printNUM
+
+
+oneP:
+	LDI TMP, 0b00000001
+	OUT PORTA, TMP
+	PUSH T1
+	RJMP display_num
+
+twoP:
+	LDI TMP, 0b00000010
+	OUT PORTA, TMP
+	PUSH T2
+	RJMP display_num
+
+threeP:
+	LDI TMP, 0b00000100
+	OUT PORTA, TMP
+	PUSH T3
+	RJMP display_num
+
+fourP:
+	LDI TMP, 0b00001000
+	OUT PORTA, TMP
+	PUSH T4
+	RJMP display_num
+
+
+
+display_num:    ;  (0.5 сек ++counter)
+	POP TMP
 	CPI TMP, 0
+	BREQ out_0
+	CPI TMP, 1
 	BREQ out_1
-	CPI TMP, 15
-	BREQ out_1
-	CPI TMP, 30
+	CPI TMP, 2
 	BREQ out_2
-	CPI TMP, 45
+	CPI TMP, 3
 	BREQ out_3
-	CPI TMP, 60
+	CPI TMP, 4
 	BREQ out_4
-	CPI TMP, 75
+	CPI TMP, 5
 	BREQ out_5
-	CPI TMP, 90
+	CPI TMP, 6
 	BREQ out_6
-	CPI TMP, 105
+	CPI TMP, 7
 	BREQ out_7
-	CPI TMP, 120
+	CPI TMP, 8
 	BREQ out_8
-	JMP main
+	CPI TMP, 9
+	BREQ out_9
+	
+	
 
 blink:
-	IN TMP, PORTB
-	LDI R30, 0b00001111
-	EOR TMP, R30
-	OUT PORTB, TMP
+	IN TMP, PORTA
+	EOR TMP, R7
+	OUT PORTA, TMP
 	RJMP main
 
 out_0:
+	
 	CLR TMP
-	OUT PORTA, TMP
+	OUT PORTB, TMP
 	LDI TMP, zero
-	OUT PORTA, TMP
-	RJMP main
+	OUT PORTB, TMP
+	JMP main
 
 out_1:
 	CLR TMP
-	OUT PORTA, TMP
+	OUT PORTB, TMP
 	LDI TMP, one
-	OUT PORTA, TMP
-	CALL delay
-	RJMP main
+	OUT PORTB, TMP
+	JMP main
 
 out_2:
 	CLR TMP
-	OUT PORTA, TMP
+	OUT PORTB, TMP
 	LDI TMP, two
-	OUT PORTA, TMP
-	RJMP main
+	OUT PORTB, TMP
+	JMP main
 
 out_3:
 	CLR TMP
-	OUT PORTA, TMP
+	OUT PORTB, TMP
 	LDI TMP, three
-	OUT PORTA, TMP
-	RJMP main
+	OUT PORTB, TMP
+	JMP main
 
 out_4:
 	CLR TMP
-	OUT PORTA, TMP
+	OUT PORTB, TMP
 	LDI TMP, four
-	OUT PORTA, TMP
-	RJMP main
+	OUT PORTB, TMP
+	JMP main
 
 out_5:
 	CLR TMP
-	OUT PORTA, TMP
+	OUT PORTB, TMP
 	LDI TMP, five
-	OUT PORTA, TMP
-	RJMP blink
+	OUT PORTB, TMP
+	JMP main
 
 out_6:
 	CLR TMP
-	OUT PORTA, TMP
+	OUT PORTB, TMP
 	LDI TMP, six
-	OUT PORTA, TMP
-	RJMP main
+	OUT PORTB, TMP
+	JMP main
 
 out_7:
 	CLR TMP
-	OUT PORTA, TMP
+	OUT PORTB, TMP
 	LDI TMP, seven
-	OUT PORTA, TMP
-	RJMP main
+	OUT PORTB, TMP
+	JMP main
 
 out_8:
 	CLR TMP
-	OUT PORTA, TMP
+	OUT PORTB, TMP
 	LDI TMP, eight
-	OUT PORTA, TMP
-	RJMP main
+	OUT PORTB, TMP
+	JMP main
+
+out_9:
+	CLR TMP
+	OUT PORTB, TMP
+	LDI TMP, nine
+	OUT PORTB, TMP
+	JMP main
 
 	                   
 
@@ -282,10 +376,20 @@ TIMER1_COMP:
 	OUT SREG, R20
 	RETI
 
+obnull:
+	LDI NUM_OF_PRINT, 1
+	JMP ret_obnull
+
 TIMER0_OVF:
 	IN R20, SREG
 	PUSH R20
-	INC COUNTER
+
+
+	INC NUM_OF_PRINT
+	CPI NUM_OF_PRINT, 5
+	BREQ obnull
+ret_obnull:
+
 	POP R20
 	OUT SREG, R20
 	RETI
@@ -293,18 +397,3 @@ TIMER0_OVF:
 TIMER0_COMP:
 	RETI
 	
-
-
-delay: ; задержка 500 мс
-	LDI R25, 10 ; 10 70 21
-	LDI R26, 70
-	LDI R27, 21
-delay_sub:
-	DEC R25
-	BRNE delay_sub
-	DEC R26
-	BRNE delay_sub
-	DEC R27
-	BRNE delay_sub
-	RET
-
