@@ -1,0 +1,175 @@
+<circuit version="1.1.0-SR1" rev="2005" stepSize="1000000" stepsPS="1000000" NLsteps="100000" reaStep="1000000" animate="0" >
+
+<item itemtype="Rail" CircId="Rail-14" mainComp="false" ShowProp="Voltage" Show_id="false" Show_Val="true" Pos="-448,-296" rotation="90" hflip="1" vflip="1" label="Rail-14" idLabPos="-16,-24" labelrot="0" valLabPos="8.25225,-3.27446" valLabRot="-90" Voltage="5 V" />
+
+<item itemtype="Resistor" CircId="Resistor-32" mainComp="false" ShowProp="Resistance" Show_id="false" Show_Val="true" Pos="-856,-400" rotation="90" hflip="1" vflip="1" label="Resistor-32" idLabPos="-16,-24" labelrot="0" valLabPos="8.04307,16.3634" valLabRot="180" Resistance="5 kΩ" />
+
+<item itemtype="Rail" CircId="Rail-29" mainComp="false" ShowProp="Voltage" Show_id="false" Show_Val="true" Pos="-856,-440" rotation="90" hflip="1" vflip="1" label="Rail-29" idLabPos="-5,-10" labelrot="-90" valLabPos="-16.4303,6.49226" valLabRot="-90" Voltage="5 V" />
+
+<item itemtype="Ground" CircId="Ground-30" mainComp="false" Show_id="false" Show_Val="false" Pos="-856,-296" rotation="0" hflip="1" vflip="1" label="Ground-30" idLabPos="-16,8" labelrot="0" valLabPos="-16,20" valLabRot="0" />
+
+<item itemtype="Push" CircId="Push-31" mainComp="false" Show_id="true" Show_Val="false" Pos="-856,-344" rotation="90" hflip="1" vflip="1" label="Reset" idLabPos="-8.53836,47.7147" labelrot="-90" valLabPos="-16,20" valLabRot="0" Norm_Close="false" Poles="1" />
+
+<item itemtype="LedBar" CircId="LedBar-54" mainComp="false" Show_id="false" Show_Val="false" Pos="-724,-324" rotation="-90" hflip="1" vflip="1" label="LedBar-54" idLabPos="-16,-44" labelrot="0" valLabPos="-16,-56" valLabRot="0" Color="Yellow" Size="8 _Leds" Grounded="true" Threshold="2.4 V" MaxCurrent="30 mA" Resistance="0.6 Ω" />
+
+<item itemtype="LedBar" CircId="LedBar-57" mainComp="false" Show_id="false" Show_Val="false" Pos="-724,-4" rotation="-270" hflip="1" vflip="1" label="LedBar-57" idLabPos="-16,-44" labelrot="0" valLabPos="-16,-56" valLabRot="0" Color="Yellow" Size="8 _Leds" Grounded="true" Threshold="2.4 V" MaxCurrent="30 mA" Resistance="0.6 Ω" />
+
+<item itemtype="MCU" CircId="mega32-1" mainComp="false" Show_id="true" Show_Val="false" Pos="-556,-276" rotation="0" hflip="1" vflip="1" label="Atmega32" idLabPos="-1.27202,170.402" labelrot="0" valLabPos="0,0" valLabRot="0" Frequency="8 MHz" Program="lab3/lab3/Debug/lab3.hex" Auto_Load="true" saveEepr="false" Logic_Symbol="true" Wdt_enabled="false" varList=",ADCL,ADCH" MainMcu="true" SerialMon="-1" />
+
+<item itemtype="LedBar" CircId="LedBar-84" mainComp="false" Show_id="false" Show_Val="false" Pos="-348,-324" rotation="-90" hflip="1" vflip="1" label="LedBar-84" idLabPos="-16,-44" labelrot="0" valLabPos="-16,-56" valLabRot="0" Color="Yellow" Size="8 _Leds" Grounded="true" Threshold="2.4 V" MaxCurrent="30 mA" Resistance="0.6 Ω" />
+
+<item itemtype="LedBar" CircId="LedBar-86" mainComp="false" Show_id="false" Show_Val="false" Pos="-340,-4" rotation="-270" hflip="1" vflip="1" label="LedBar-86" idLabPos="-16,-44" labelrot="0" valLabPos="-16,-56" valLabRot="0" Color="Yellow" Size="8 _Leds" Grounded="true" Threshold="2.4 V" MaxCurrent="30 mA" Resistance="0.6 Ω" />
+
+<item itemtype="Seven Segment" CircId="Seven Segment-88" mainComp="false" Show_id="false" Show_Val="false" Pos="-580,-404" rotation="0" hflip="1" vflip="1" label="Seven Segment-88" idLabPos="20,-44" labelrot="0" valLabPos="-16,20" valLabRot="0" Color="Red" NumDisplays="4" Vertical_Pins="false" CommonCathode="true" Threshold="1 V" MaxCurrent="20 mA" Resistance="1 Ω" />
+
+<item itemtype="Node" CircId="Node-40" mainComp="false" Pos="-448,-268" />
+
+<item itemtype="Node" CircId="Node-35" mainComp="false" Pos="-856,-376" />
+
+<item itemtype="Node" CircId="Node-117" mainComp="false" Pos="-396,-244" />
+
+<item itemtype="Node" CircId="Node-118" mainComp="false" Pos="-400,-236" />
+
+<item itemtype="Node" CircId="Node-119" mainComp="false" Pos="-404,-228" />
+
+<item itemtype="Node" CircId="Node-120" mainComp="false" Pos="-408,-220" />
+
+<item itemtype="Node" CircId="Node-121" mainComp="false" Pos="-412,-212" />
+
+<item itemtype="Node" CircId="Node-122" mainComp="false" Pos="-416,-204" />
+
+<item itemtype="Node" CircId="Node-123" mainComp="false" Pos="-420,-196" />
+
+<item itemtype="Node" CircId="Node-124" mainComp="false" Pos="-692,-304" />
+
+<item itemtype="Node" CircId="Node-125" mainComp="false" Pos="-700,-300" />
+
+<item itemtype="Node" CircId="Node-128" mainComp="false" Pos="-708,-296" />
+
+<item itemtype="Node" CircId="Node-129" mainComp="false" Pos="-716,-292" />
+
+<item itemtype="Connector" uid="Connector-39" startpinid="Rail-29-outnod" endpinid="Resistor-32-lPin" pointList="-856,-424,-856,-416" />
+
+<item itemtype="Connector" uid="Connector-32" startpinid="Push-31-switch0pinN" endpinid="Ground-30-Gnd" pointList="-856,-328,-856,-312" />
+
+<item itemtype="Connector" uid="Connector-131" startpinid="mega32-1-PORTB7" endpinid="LedBar-57-led7-pinP" pointList="-564,-116,-756,-116,-756,-20" />
+
+<item itemtype="Connector" uid="Connector-121" startpinid="mega32-1-PORTA7" endpinid="LedBar-54-led0-pinP" pointList="-564,-188,-748,-188,-748,-308" />
+
+<item itemtype="Connector" uid="Connector-120" startpinid="mega32-1-PORTA6" endpinid="LedBar-54-led1-pinP" pointList="-564,-196,-740,-196,-740,-308" />
+
+<item itemtype="Connector" uid="Connector-119" startpinid="mega32-1-PORTA5" endpinid="LedBar-54-led2-pinP" pointList="-564,-204,-732,-204,-732,-308" />
+
+<item itemtype="Connector" uid="Connector-118" startpinid="mega32-1-PORTA4" endpinid="LedBar-54-led3-pinP" pointList="-564,-212,-724,-212,-724,-308" />
+
+<item itemtype="Connector" uid="Connector-68" startpinid="Node-40-2" endpinid="Rail-14-outnod" pointList="-448,-268,-448,-280" />
+
+<item itemtype="Connector" uid="Connector-67" startpinid="mega32-1-PORTV1" endpinid="Node-40-0" pointList="-508,-260,-448,-260,-448,-268" />
+
+<item itemtype="Connector" uid="Connector-66" startpinid="mega32-1-PORTV0" endpinid="Node-40-1" pointList="-508,-268,-448,-268" />
+
+<item itemtype="Connector" uid="Connector-225" startpinid="mega32-1-PORTB0" endpinid="LedBar-57-led0-pinP" pointList="-564,-172,-700,-172,-700,-20" />
+
+<item itemtype="Connector" uid="Connector-226" startpinid="mega32-1-PORTB1" endpinid="LedBar-57-led1-pinP" pointList="-564,-164,-708,-164,-708,-20" />
+
+<item itemtype="Connector" uid="Connector-227" startpinid="mega32-1-PORTB2" endpinid="LedBar-57-led2-pinP" pointList="-564,-156,-716,-156,-716,-20" />
+
+<item itemtype="Connector" uid="Connector-228" startpinid="mega32-1-PORTB3" endpinid="LedBar-57-led3-pinP" pointList="-564,-148,-724,-148,-724,-20" />
+
+<item itemtype="Connector" uid="Connector-229" startpinid="mega32-1-PORTB4" endpinid="LedBar-57-led4-pinP" pointList="-564,-140,-732,-140,-732,-20" />
+
+<item itemtype="Connector" uid="Connector-230" startpinid="mega32-1-PORTB5" endpinid="LedBar-57-led5-pinP" pointList="-564,-132,-740,-132,-740,-20" />
+
+<item itemtype="Connector" uid="Connector-231" startpinid="mega32-1-PORTB6" endpinid="LedBar-57-led6-pinP" pointList="-564,-124,-748,-124,-748,-20" />
+
+<item itemtype="Connector" uid="Connector-245" startpinid="mega32-1-PORTC7" endpinid="LedBar-84-led0-pinP" pointList="-508,-188,-372,-188,-372,-308" />
+
+<item itemtype="Connector" uid="Connector-43" startpinid="Node-35-2" endpinid="mega32-1-RST" pointList="-856,-376,-856,-268,-564,-268" />
+
+<item itemtype="Connector" uid="Connector-41" startpinid="Push-31-pinP0" endpinid="Node-35-1" pointList="-856,-360,-856,-376" />
+
+<item itemtype="Connector" uid="Connector-42" startpinid="Resistor-32-rPin" endpinid="Node-35-0" pointList="-856,-384,-856,-376" />
+
+<item itemtype="Connector" uid="Connector-251" startpinid="mega32-1-PORTD0" endpinid="LedBar-86-led0-pinP" pointList="-508,-172,-316,-172,-316,-20" />
+
+<item itemtype="Connector" uid="Connector-252" startpinid="mega32-1-PORTD1" endpinid="LedBar-86-led1-pinP" pointList="-508,-164,-324,-164,-324,-20" />
+
+<item itemtype="Connector" uid="Connector-253" startpinid="mega32-1-PORTD2" endpinid="LedBar-86-led2-pinP" pointList="-508,-156,-332,-156,-332,-20" />
+
+<item itemtype="Connector" uid="Connector-254" startpinid="mega32-1-PORTD3" endpinid="LedBar-86-led3-pinP" pointList="-508,-148,-340,-148,-340,-20" />
+
+<item itemtype="Connector" uid="Connector-255" startpinid="mega32-1-PORTD4" endpinid="LedBar-86-led4-pinP" pointList="-508,-140,-348,-140,-348,-20" />
+
+<item itemtype="Connector" uid="Connector-256" startpinid="mega32-1-PORTD5" endpinid="LedBar-86-led5-pinP" pointList="-508,-132,-356,-132,-356,-20" />
+
+<item itemtype="Connector" uid="Connector-257" startpinid="mega32-1-PORTD6" endpinid="LedBar-86-led6-pinP" pointList="-508,-124,-364,-124,-364,-20" />
+
+<item itemtype="Connector" uid="Connector-258" startpinid="mega32-1-PORTD7" endpinid="LedBar-86-led7-pinP" pointList="-508,-116,-372,-116,-372,-20" />
+
+<item itemtype="Connector" uid="Connector-360" startpinid="Seven Segment-88-pin_a" endpinid="Node-117-1" pointList="-604,-428,-612,-428,-612,-348,-396,-348,-396,-244" />
+
+<item itemtype="Connector" uid="Connector-361" startpinid="mega32-1-PORTC0" endpinid="Node-117-0" pointList="-508,-244,-396,-244" />
+
+<item itemtype="Connector" uid="Connector-362" startpinid="Node-117-2" endpinid="LedBar-84-led7-pinP" pointList="-396,-244,-316,-244,-316,-308" />
+
+<item itemtype="Connector" uid="Connector-363" startpinid="Seven Segment-88-pin_b" endpinid="Node-118-1" pointList="-604,-420,-616,-420,-616,-344,-400,-344,-400,-236" />
+
+<item itemtype="Connector" uid="Connector-364" startpinid="mega32-1-PORTC1" endpinid="Node-118-0" pointList="-508,-236,-400,-236" />
+
+<item itemtype="Connector" uid="Connector-365" startpinid="Node-118-2" endpinid="LedBar-84-led6-pinP" pointList="-400,-236,-324,-236,-324,-308" />
+
+<item itemtype="Connector" uid="Connector-366" startpinid="Seven Segment-88-pin_c" endpinid="Node-119-1" pointList="-604,-412,-620,-412,-620,-340,-404,-340,-404,-228" />
+
+<item itemtype="Connector" uid="Connector-367" startpinid="mega32-1-PORTC2" endpinid="Node-119-0" pointList="-508,-228,-404,-228" />
+
+<item itemtype="Connector" uid="Connector-368" startpinid="Node-119-2" endpinid="LedBar-84-led5-pinP" pointList="-404,-228,-332,-228,-332,-308" />
+
+<item itemtype="Connector" uid="Connector-369" startpinid="Seven Segment-88-pin_d" endpinid="Node-120-1" pointList="-604,-404,-624,-404,-624,-336,-408,-336,-408,-220" />
+
+<item itemtype="Connector" uid="Connector-370" startpinid="mega32-1-PORTC3" endpinid="Node-120-0" pointList="-508,-220,-408,-220" />
+
+<item itemtype="Connector" uid="Connector-371" startpinid="Node-120-2" endpinid="LedBar-84-led4-pinP" pointList="-408,-220,-340,-220,-340,-308" />
+
+<item itemtype="Connector" uid="Connector-372" startpinid="Seven Segment-88-pin_e" endpinid="Node-121-1" pointList="-604,-396,-628,-396,-628,-332,-412,-332,-412,-212" />
+
+<item itemtype="Connector" uid="Connector-373" startpinid="mega32-1-PORTC4" endpinid="Node-121-0" pointList="-508,-212,-412,-212" />
+
+<item itemtype="Connector" uid="Connector-374" startpinid="Node-121-2" endpinid="LedBar-84-led3-pinP" pointList="-412,-212,-348,-212,-348,-308" />
+
+<item itemtype="Connector" uid="Connector-375" startpinid="Seven Segment-88-pin_f" endpinid="Node-122-1" pointList="-604,-388,-632,-388,-632,-328,-416,-328,-416,-204" />
+
+<item itemtype="Connector" uid="Connector-376" startpinid="mega32-1-PORTC5" endpinid="Node-122-0" pointList="-508,-204,-416,-204" />
+
+<item itemtype="Connector" uid="Connector-377" startpinid="Node-122-2" endpinid="LedBar-84-led2-pinP" pointList="-416,-204,-356,-204,-356,-308" />
+
+<item itemtype="Connector" uid="Connector-379" startpinid="Seven Segment-88-pin_g" endpinid="Node-123-1" pointList="-604,-380,-636,-380,-636,-324,-420,-324,-420,-196" />
+
+<item itemtype="Connector" uid="Connector-380" startpinid="mega32-1-PORTC6" endpinid="Node-123-0" pointList="-508,-196,-420,-196" />
+
+<item itemtype="Connector" uid="Connector-381" startpinid="Node-123-2" endpinid="LedBar-84-led1-pinP" pointList="-420,-196,-364,-196,-364,-308" />
+
+<item itemtype="Connector" uid="Connector-382" startpinid="Seven Segment-88-pin_commona" endpinid="Node-124-1" pointList="-572,-372,-572,-304,-692,-304" />
+
+<item itemtype="Connector" uid="Connector-383" startpinid="mega32-1-PORTA0" endpinid="Node-124-0" pointList="-564,-244,-692,-244,-692,-304" />
+
+<item itemtype="Connector" uid="Connector-384" startpinid="Node-124-2" endpinid="LedBar-54-led7-pinP" pointList="-692,-304,-692,-308" />
+
+<item itemtype="Connector" uid="Connector-385" startpinid="Seven Segment-88-pin_commonb" endpinid="Node-125-1" pointList="-540,-372,-540,-300,-700,-300" />
+
+<item itemtype="Connector" uid="Connector-386" startpinid="mega32-1-PORTA1" endpinid="Node-125-0" pointList="-564,-236,-700,-236,-700,-300" />
+
+<item itemtype="Connector" uid="Connector-387" startpinid="Node-125-2" endpinid="LedBar-54-led6-pinP" pointList="-700,-300,-700,-308" />
+
+<item itemtype="Connector" uid="Connector-395" startpinid="Seven Segment-88-pin_commonc" endpinid="Node-128-1" pointList="-508,-372,-508,-296,-708,-296" />
+
+<item itemtype="Connector" uid="Connector-396" startpinid="mega32-1-PORTA2" endpinid="Node-128-0" pointList="-564,-228,-708,-228,-708,-296" />
+
+<item itemtype="Connector" uid="Connector-397" startpinid="Node-128-2" endpinid="LedBar-54-led5-pinP" pointList="-708,-296,-708,-308" />
+
+<item itemtype="Connector" uid="Connector-398" startpinid="Seven Segment-88-pin_commond" endpinid="Node-129-1" pointList="-476,-372,-476,-292,-716,-292" />
+
+<item itemtype="Connector" uid="Connector-399" startpinid="mega32-1-PORTA3" endpinid="Node-129-0" pointList="-564,-220,-716,-220,-716,-292" />
+
+<item itemtype="Connector" uid="Connector-400" startpinid="Node-129-2" endpinid="LedBar-54-led4-pinP" pointList="-716,-292,-716,-308" />
+
+</circuit>

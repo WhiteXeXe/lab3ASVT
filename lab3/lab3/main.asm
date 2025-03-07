@@ -110,6 +110,20 @@ PINx - нажатие порт
 PORTx - вз€тие битов с порта
 DDR - настройка (ввод/вывод)
 
+
+
+
+
+
+
+- ¬ режиме —“— у нас при совпадении в сравнении происходит обнуление
+- ¬ normal режиме у нас при совпадении в сравнении происходит действие, а потом идет далле до переполнени€
+
+
+
+
+
+
 */
 
 
@@ -118,7 +132,7 @@ RESET:
 	; настройка семисегментных индикаторов
 	SER TMP
 	OUT DDRA, TMP   ; (на каком индикаторе будет выводитьс€)
-	OUT DDRB, TMP   ; замена ddrc (отвечает за число)
+	OUT DDRC, TMP   ; замена ddrc (отвечает за число)
 
 	; настройка порта ƒ на ввод (PD0 - PD3)
 	CLR TMP
@@ -126,7 +140,7 @@ RESET:
 
 	; очищаем порты
 	OUT PORTA, TMP
-	OUT PORTB, TMP
+	OUT PORTC, TMP
 	OUT PORTC, TMP
 	OUT PORTD, TMP
 
@@ -145,7 +159,7 @@ RESET:
 
 	
 
-	LDI TMP, 0
+	LDI TMP, 4
 	MOV T1, TMP
 	LDI TMP, 0
 	MOV T2, TMP
@@ -167,9 +181,9 @@ RESET:
 	LDI TMP, 0xFF
 	OUT OCR0, TMP
 
-	LDI TMP, 0x3D
+	LDI TMP, 0x1E
 	OUT OCR1AH, TMP
-	LDI TMP, 0x08
+	LDI TMP, 0x84      
 	OUT OCR1AL, TMP
 
 	
@@ -185,14 +199,13 @@ RESET:
 	CLR TMP ; очищаем регистр
 	OUT GIFR, TMP ; выставл€ем в регистре, который управл€ет внешними прерывани€ми, нули
 	SEI ; глобальное разрешение прерываний
-
+	LDI COUNTER, 0
 
 main:
 	MOV T1, COUNTER 
 	RJMP TR_T2
 	
 	
-
 
 TR_T2:
 	MOV TMP, T1
@@ -202,6 +215,7 @@ TR_T2:
 	INC T2
 	SUBI TMP, 10
 	MOV T1, TMP
+	CLR COUNTER
 
 TR_T3:
 	MOV TMP, T2
@@ -215,10 +229,10 @@ TR_T3:
 TR_T4:
 	MOV TMP, T3
 	CLC
-	CPI TMP, 10
+	CPI TMP, 9
 	BRLO printNUM
 	INC T4
-	SUBI TMP, 10
+	SUBI TMP, 9
 	MOV T3, TMP
 
 
@@ -235,25 +249,25 @@ printNUM:
 
 
 oneP:
-	LDI TMP, 0b00000001
+	LDI TMP, 0b00000111
 	OUT PORTA, TMP
 	PUSH T1
 	RJMP display_num
 
 twoP:
-	LDI TMP, 0b00000010
+	LDI TMP, 0b00001011
 	OUT PORTA, TMP
 	PUSH T2
 	RJMP display_num
 
 threeP:
-	LDI TMP, 0b00000100
+	LDI TMP, 0b00001101
 	OUT PORTA, TMP
 	PUSH T3
 	RJMP display_num
 
 fourP:
-	LDI TMP, 0b00001000
+	LDI TMP, 0b00001110
 	OUT PORTA, TMP
 	PUSH T4
 	RJMP display_num
@@ -294,72 +308,72 @@ blink:
 out_0:
 	
 	CLR TMP
-	OUT PORTB, TMP
+	OUT PORTC, TMP
 	LDI TMP, zero
-	OUT PORTB, TMP
+	OUT PORTC, TMP
 	JMP main
 
 out_1:
 	CLR TMP
-	OUT PORTB, TMP
+	OUT PORTC, TMP
 	LDI TMP, one
-	OUT PORTB, TMP
+	OUT PORTC, TMP
 	JMP main
 
 out_2:
 	CLR TMP
-	OUT PORTB, TMP
+	OUT PORTC, TMP
 	LDI TMP, two
-	OUT PORTB, TMP
+	OUT PORTC, TMP
 	JMP main
 
 out_3:
 	CLR TMP
-	OUT PORTB, TMP
+	OUT PORTC, TMP
 	LDI TMP, three
-	OUT PORTB, TMP
+	OUT PORTC, TMP
 	JMP main
 
 out_4:
 	CLR TMP
-	OUT PORTB, TMP
+	OUT PORTC, TMP
 	LDI TMP, four
-	OUT PORTB, TMP
+	OUT PORTC, TMP
 	JMP main
 
 out_5:
 	CLR TMP
-	OUT PORTB, TMP
+	OUT PORTC, TMP
 	LDI TMP, five
-	OUT PORTB, TMP
+	OUT PORTC, TMP
 	JMP main
 
 out_6:
 	CLR TMP
-	OUT PORTB, TMP
+	OUT PORTC, TMP
 	LDI TMP, six
-	OUT PORTB, TMP
+	OUT PORTC, TMP
 	JMP main
 
 out_7:
 	CLR TMP
-	OUT PORTB, TMP
+	OUT PORTC, TMP
 	LDI TMP, seven
-	OUT PORTB, TMP
+	OUT PORTC, TMP
 	JMP main
 
 out_8:
 	CLR TMP
-	OUT PORTB, TMP
+	OUT PORTC, TMP
 	LDI TMP, eight
-	OUT PORTB, TMP
+	OUT PORTC, TMP
 	JMP main
 
 out_9:
 	CLR TMP
-	OUT PORTB, TMP
+	OUT PORTC, TMP
 	LDI TMP, nine
-	OUT PORTB, TMP
+	OUT PORTC, TMP
 	JMP main
 
 	                   
@@ -380,19 +394,18 @@ obnull:
 	LDI NUM_OF_PRINT, 1
 	JMP ret_obnull
 
+
 TIMER0_OVF:
 	IN R20, SREG
 	PUSH R20
-
-
 	INC NUM_OF_PRINT
 	CPI NUM_OF_PRINT, 5
 	BREQ obnull
 ret_obnull:
-
 	POP R20
 	OUT SREG, R20
 	RETI
+
 
 TIMER0_COMP:
 	RETI

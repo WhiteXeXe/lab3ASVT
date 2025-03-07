@@ -1,5 +1,5 @@
 <ASSEMBLER_INFO>
- <VERSION>2.2.7</VERSION>
+ <VERSION>2.2.8</VERSION>
  <DEVICE>"ATmega32"</DEVICE>
  <WORKING_DIR>C:\Users\dima\Desktop\lab3ASVT\lab3\lab3\Debug</WORKING_DIR>
  <INCLUDE_PATH>
@@ -22,34 +22,34 @@
   <FILE>lab3.lss</FILE>
  </OUTPUT_FILES>
  <LABELS>
-  <RESET><FILE>C:\Users\dima\Desktop\lab3ASVT\lab3\lab3\main.asm</FILE><LINE>117</LINE></RESET>
-  <EXIT_INT0><FILE>C:\Users\dima\Desktop\lab3ASVT\lab3\lab3\main.asm</FILE><LINE>367</LINE></EXIT_INT0>
-  <EXIT_INT1><FILE>C:\Users\dima\Desktop\lab3ASVT\lab3\lab3\main.asm</FILE><LINE>369</LINE></EXIT_INT1>
-  <TIMER1_COMP><FILE>C:\Users\dima\Desktop\lab3ASVT\lab3\lab3\main.asm</FILE><LINE>371</LINE></TIMER1_COMP>
-  <TIMER0_COMP><FILE>C:\Users\dima\Desktop\lab3ASVT\lab3\lab3\main.asm</FILE><LINE>397</LINE></TIMER0_COMP>
-  <TIMER0_OVF><FILE>C:\Users\dima\Desktop\lab3ASVT\lab3\lab3\main.asm</FILE><LINE>383</LINE></TIMER0_OVF>
-  <main><FILE>C:\Users\dima\Desktop\lab3ASVT\lab3\lab3\main.asm</FILE><LINE>190</LINE></main>
-  <TR_T2><FILE>C:\Users\dima\Desktop\lab3ASVT\lab3\lab3\main.asm</FILE><LINE>197</LINE></TR_T2>
-  <printNUM><FILE>C:\Users\dima\Desktop\lab3ASVT\lab3\lab3\main.asm</FILE><LINE>225</LINE></printNUM>
-  <TR_T3><FILE>C:\Users\dima\Desktop\lab3ASVT\lab3\lab3\main.asm</FILE><LINE>206</LINE></TR_T3>
-  <TR_T4><FILE>C:\Users\dima\Desktop\lab3ASVT\lab3\lab3\main.asm</FILE><LINE>215</LINE></TR_T4>
-  <oneP><FILE>C:\Users\dima\Desktop\lab3ASVT\lab3\lab3\main.asm</FILE><LINE>237</LINE></oneP>
-  <twoP><FILE>C:\Users\dima\Desktop\lab3ASVT\lab3\lab3\main.asm</FILE><LINE>243</LINE></twoP>
-  <threeP><FILE>C:\Users\dima\Desktop\lab3ASVT\lab3\lab3\main.asm</FILE><LINE>249</LINE></threeP>
-  <fourP><FILE>C:\Users\dima\Desktop\lab3ASVT\lab3\lab3\main.asm</FILE><LINE>255</LINE></fourP>
-  <display_num><FILE>C:\Users\dima\Desktop\lab3ASVT\lab3\lab3\main.asm</FILE><LINE>263</LINE></display_num>
-  <out_0><FILE>C:\Users\dima\Desktop\lab3ASVT\lab3\lab3\main.asm</FILE><LINE>294</LINE></out_0>
-  <out_1><FILE>C:\Users\dima\Desktop\lab3ASVT\lab3\lab3\main.asm</FILE><LINE>302</LINE></out_1>
-  <out_2><FILE>C:\Users\dima\Desktop\lab3ASVT\lab3\lab3\main.asm</FILE><LINE>309</LINE></out_2>
-  <out_3><FILE>C:\Users\dima\Desktop\lab3ASVT\lab3\lab3\main.asm</FILE><LINE>316</LINE></out_3>
-  <out_4><FILE>C:\Users\dima\Desktop\lab3ASVT\lab3\lab3\main.asm</FILE><LINE>323</LINE></out_4>
-  <out_5><FILE>C:\Users\dima\Desktop\lab3ASVT\lab3\lab3\main.asm</FILE><LINE>330</LINE></out_5>
-  <out_6><FILE>C:\Users\dima\Desktop\lab3ASVT\lab3\lab3\main.asm</FILE><LINE>337</LINE></out_6>
-  <out_7><FILE>C:\Users\dima\Desktop\lab3ASVT\lab3\lab3\main.asm</FILE><LINE>344</LINE></out_7>
-  <out_8><FILE>C:\Users\dima\Desktop\lab3ASVT\lab3\lab3\main.asm</FILE><LINE>351</LINE></out_8>
-  <out_9><FILE>C:\Users\dima\Desktop\lab3ASVT\lab3\lab3\main.asm</FILE><LINE>358</LINE></out_9>
-  <blink><FILE>C:\Users\dima\Desktop\lab3ASVT\lab3\lab3\main.asm</FILE><LINE>288</LINE></blink>
-  <obnull><FILE>C:\Users\dima\Desktop\lab3ASVT\lab3\lab3\main.asm</FILE><LINE>379</LINE></obnull>
-  <ret_obnull><FILE>C:\Users\dima\Desktop\lab3ASVT\lab3\lab3\main.asm</FILE><LINE>391</LINE></ret_obnull>
+  <RESET><FILE>C:\Users\dima\Desktop\lab3ASVT\lab3\lab3\main.asm</FILE><LINE>131</LINE></RESET>
+  <EXIT_INT0><FILE>C:\Users\dima\Desktop\lab3ASVT\lab3\lab3\main.asm</FILE><LINE>381</LINE></EXIT_INT0>
+  <EXIT_INT1><FILE>C:\Users\dima\Desktop\lab3ASVT\lab3\lab3\main.asm</FILE><LINE>383</LINE></EXIT_INT1>
+  <TIMER1_COMP><FILE>C:\Users\dima\Desktop\lab3ASVT\lab3\lab3\main.asm</FILE><LINE>385</LINE></TIMER1_COMP>
+  <TIMER0_COMP><FILE>C:\Users\dima\Desktop\lab3ASVT\lab3\lab3\main.asm</FILE><LINE>410</LINE></TIMER0_COMP>
+  <TIMER0_OVF><FILE>C:\Users\dima\Desktop\lab3ASVT\lab3\lab3\main.asm</FILE><LINE>398</LINE></TIMER0_OVF>
+  <main><FILE>C:\Users\dima\Desktop\lab3ASVT\lab3\lab3\main.asm</FILE><LINE>204</LINE></main>
+  <TR_T2><FILE>C:\Users\dima\Desktop\lab3ASVT\lab3\lab3\main.asm</FILE><LINE>210</LINE></TR_T2>
+  <printNUM><FILE>C:\Users\dima\Desktop\lab3ASVT\lab3\lab3\main.asm</FILE><LINE>239</LINE></printNUM>
+  <TR_T3><FILE>C:\Users\dima\Desktop\lab3ASVT\lab3\lab3\main.asm</FILE><LINE>220</LINE></TR_T3>
+  <TR_T4><FILE>C:\Users\dima\Desktop\lab3ASVT\lab3\lab3\main.asm</FILE><LINE>229</LINE></TR_T4>
+  <oneP><FILE>C:\Users\dima\Desktop\lab3ASVT\lab3\lab3\main.asm</FILE><LINE>251</LINE></oneP>
+  <twoP><FILE>C:\Users\dima\Desktop\lab3ASVT\lab3\lab3\main.asm</FILE><LINE>257</LINE></twoP>
+  <threeP><FILE>C:\Users\dima\Desktop\lab3ASVT\lab3\lab3\main.asm</FILE><LINE>263</LINE></threeP>
+  <fourP><FILE>C:\Users\dima\Desktop\lab3ASVT\lab3\lab3\main.asm</FILE><LINE>269</LINE></fourP>
+  <display_num><FILE>C:\Users\dima\Desktop\lab3ASVT\lab3\lab3\main.asm</FILE><LINE>277</LINE></display_num>
+  <out_0><FILE>C:\Users\dima\Desktop\lab3ASVT\lab3\lab3\main.asm</FILE><LINE>308</LINE></out_0>
+  <out_1><FILE>C:\Users\dima\Desktop\lab3ASVT\lab3\lab3\main.asm</FILE><LINE>316</LINE></out_1>
+  <out_2><FILE>C:\Users\dima\Desktop\lab3ASVT\lab3\lab3\main.asm</FILE><LINE>323</LINE></out_2>
+  <out_3><FILE>C:\Users\dima\Desktop\lab3ASVT\lab3\lab3\main.asm</FILE><LINE>330</LINE></out_3>
+  <out_4><FILE>C:\Users\dima\Desktop\lab3ASVT\lab3\lab3\main.asm</FILE><LINE>337</LINE></out_4>
+  <out_5><FILE>C:\Users\dima\Desktop\lab3ASVT\lab3\lab3\main.asm</FILE><LINE>344</LINE></out_5>
+  <out_6><FILE>C:\Users\dima\Desktop\lab3ASVT\lab3\lab3\main.asm</FILE><LINE>351</LINE></out_6>
+  <out_7><FILE>C:\Users\dima\Desktop\lab3ASVT\lab3\lab3\main.asm</FILE><LINE>358</LINE></out_7>
+  <out_8><FILE>C:\Users\dima\Desktop\lab3ASVT\lab3\lab3\main.asm</FILE><LINE>365</LINE></out_8>
+  <out_9><FILE>C:\Users\dima\Desktop\lab3ASVT\lab3\lab3\main.asm</FILE><LINE>372</LINE></out_9>
+  <blink><FILE>C:\Users\dima\Desktop\lab3ASVT\lab3\lab3\main.asm</FILE><LINE>302</LINE></blink>
+  <obnull><FILE>C:\Users\dima\Desktop\lab3ASVT\lab3\lab3\main.asm</FILE><LINE>393</LINE></obnull>
+  <ret_obnull><FILE>C:\Users\dima\Desktop\lab3ASVT\lab3\lab3\main.asm</FILE><LINE>404</LINE></ret_obnull>
  </LABELS>
 </ASSEMBLER_INFO>

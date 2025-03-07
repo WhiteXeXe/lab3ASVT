@@ -1,5 +1,5 @@
 
-AVRASM ver. 2.2.7  C:\Users\dima\Desktop\lab3ASVT\lab3\lab3\main.asm Thu Mar 06 20:23:05 2025
+AVRASM ver. 2.2.8  C:\Users\dima\Desktop\lab3ASVT\lab3\lab3\main.asm Fri Mar 07 11:25:31 2025
 
 
 EQU  SIGNATURE_000 0000001e
@@ -569,11 +569,11 @@ EQU  TWIaddr      00000026
 EQU  SPMRaddr     00000028
 EQU  INT_VECTORS_SIZE 0000002a
 CSEG RESET        00000018
-CSEG EXIT_INT0    000000cb
-CSEG EXIT_INT1    000000cc
-CSEG TIMER1_COMP  000000cd
-CSEG TIMER0_COMP  000000de
-CSEG TIMER0_OVF   000000d6
+CSEG EXIT_INT0    000000cd
+CSEG EXIT_INT1    000000ce
+CSEG TIMER1_COMP  000000cf
+CSEG TIMER0_COMP  000000e0
+CSEG TIMER0_OVF   000000d8
 DEF  TMP          r16
 DEF  PAUSE_FLAG   r17
 DEF  SETTINGS_FLAG r18
@@ -596,26 +596,26 @@ EQU  six          0000007d
 EQU  seven        00000007
 EQU  eight        0000007f
 EQU  nine         0000006f
-CSEG main         00000045
-CSEG TR_T2        00000047
-CSEG printNUM     0000005c
-CSEG TR_T3        0000004e
-CSEG TR_T4        00000055
-CSEG oneP         00000066
-CSEG twoP         0000006a
-CSEG threeP       0000006e
-CSEG fourP        00000072
-CSEG display_num  00000076
-CSEG out_0        0000008f
-CSEG out_1        00000095
-CSEG out_2        0000009b
-CSEG out_3        000000a1
-CSEG out_4        000000a7
-CSEG out_5        000000ad
-CSEG out_6        000000b3
-CSEG out_7        000000b9
-CSEG out_8        000000bf
-CSEG out_9        000000c5
-CSEG blink        0000008b
-CSEG obnull       000000d3
-CSEG ret_obnull   000000db
+CSEG main         00000046
+CSEG TR_T2        00000048
+CSEG printNUM     0000005e
+CSEG TR_T3        00000050
+CSEG TR_T4        00000057
+CSEG oneP         00000068
+CSEG twoP         0000006c
+CSEG threeP       00000070
+CSEG fourP        00000074
+CSEG display_num  00000078
+CSEG out_0        00000091
+CSEG out_1        00000097
+CSEG out_2        0000009d
+CSEG out_3        000000a3
+CSEG out_4        000000a9
+CSEG out_5        000000af
+CSEG out_6        000000b5
+CSEG out_7        000000bb
+CSEG out_8        000000c1
+CSEG out_9        000000c7
+CSEG blink        0000008d
+CSEG obnull       000000d5
+CSEG ret_obnull   000000dd
